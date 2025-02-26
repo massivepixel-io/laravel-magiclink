@@ -13,7 +13,7 @@ class MagiclinkMiddleware
     {
         $token = (string) $request->route('token');
 
-        $magicLink = MagicLink::getValidMagicLinkByToken($token);
+        $magicLink = static::getValidMagicLinkByToken($token);
 
         if ($request->method() === 'HEAD') {
             return response()->noContent($magicLink ? 200 : 404);

@@ -9,6 +9,6 @@ class MagicLinkController extends Controller
 {
     public function access($token)
     {
-        return MagicLink::getMagicLinkByToken($token)->run();
+        return static::getMagicLinkByToken($token)->run();
     }
 }

@@ -215,7 +215,7 @@ class MagicLink extends Model
      */
     public static function deleteMagicLinkExpired()
     {
-        $query = MagicLink::where(function ($query) {
+        $query = static::where(function ($query) {
             $query
                 ->where('available_at', '<', Carbon::now())
                 ->orWhere(function ($query) {

@@ -79,7 +79,7 @@ class ResponseAction extends ActionAbstract
     protected function callResponse($httpResponse)
     {
         if (is_callable($httpResponse)) {
-            return $httpResponse(MagicLink::find($this->magiclinkId));
+            return $httpResponse(static::find($this->magiclinkId));
         }
 
         return $httpResponse;
